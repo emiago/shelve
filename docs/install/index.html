@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Install - Shelve</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.6aa5eecd4ca7c47fb2ca9b0775a7bd787e3e64a2eadf0fef8c9f924498f49127.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="/"><img alt="Logo" src="/images/logo.svg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="/"><img alt="Logo" src="/images/logo-mobile.svg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Docs</h4>
+  <ul>
+    
+    <li class="active ">
+      <a href="/docs/install/">Install</a>
+    </li>
+    
+    <li class="">
+      <a href="/docs/usage/">Usage</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Install</h1>
+<div class="content ">
+  <h2 id="install">Install</h2>
+<p>Installing is easy as it comes as single binary for server and clients.</p>
+<h3 id="install-server">Install server</h3>
+<p>Easiest way run as docker:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -d --net<span class="o">=</span>host emiraganov/shelve:latest
+</code></pre></div><p>or installing binary:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">wget &lt;url&gt; -o /usr/sbin
+shelved -l /var/log/syslog <span class="p">&amp;</span>
+</code></pre></div><p>This will run <code>shelved</code> service on which <code>shelve</code> clients will use for signaling and sharing some metadata.
+For metadata check below.</p>
+<h3 id="https">HTTPS</h3>
+<p>To run service as https some env variables must be set before running shelved.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">SERVER_TLS</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">SERVER_TLS_KEY</span><span class="o">=</span>&lt;location of key&gt;
+<span class="nv">SERVER_TLS_CRT</span><span class="o">=</span>&lt;location of crt&gt;
+</code></pre></div><h3 id="metadata">Metadata</h3>
+<p>Server will not hold or store any data about files content. All file sharing will be done p2p.
+Metadata about client sharing is active as long client is connected to server.</p>
+<p>Only metadata that server holds (In Memory) is:</p>
+<ul>
+<li>Active shared files from client and stats about files like name, type, size, modified time.</li>
+<li>Hostname and remote IP are used for identification.</li>
+</ul>
+<h2 id="install-shelve">Install shelve</h2>
+<p>Here precompiled binaries for different platform</p>
+<ul>
+<li>linux url</li>
+<li>windows url</li>
+<li>macos url</li>
+</ul>
+<h2 id="web-shelve">Web shelve</h2>
+<p>By default shelved serves web client that can be used as GUI explorer.
+Just enter IP of your server in your browser <code>http://myshelve.app</code></p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          <ul>
+            <li class="zerostatic"><a href="https://www.github.com/emiraganov/shelve">github</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.eaf147370baecdd07c022597db631f99cab1c9cd6479de586f30327a568d6a0f.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>
