@@ -1,3 +1,6 @@
+
+# WORK IN PROGRESS
+
 # Shelve
 
 Shelve goal is to be simple, cross platform and exact p2p file sharing.
@@ -24,15 +27,6 @@ Like every p2p file sharing it removes hassle with:
 - having to upload every time on some remote storage just so that someone can download, or be limited with storage capacity.
 - need to know device IP in order to send file
 - limitation of usage on single platform
-
-# Different ways of usage
-
-This service allows clients to share or different ways. Please let me know if you find other usage.
-
-- p2p between client/devices
-- having extra computer? use it as backup server, this is useful if you need some files always accessable.
-- having unused disks? mount it, share it, give users extra storage
-- share files in your VMs, containers and use one command to sync your code, configurations
 
 # How it works
 
