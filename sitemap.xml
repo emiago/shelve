@@ -2,20 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/docs/</loc>
+    <loc>https://emiraganov.github.io/shelve/docs/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url><url>
-    <loc>/docs/install/</loc>
+    <loc>https://emiraganov.github.io/shelve/docs/install/</loc>
     <lastmod>2019-02-11T19:27:37+10:00</lastmod>
   </url><url>
-    <loc>/docs/usage/</loc>
+    <loc>https://emiraganov.github.io/shelve/docs/usage/</loc>
     <lastmod>2019-02-11T19:30:08+10:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>https://emiraganov.github.io/shelve/</loc>
     <lastmod>2018-11-28T15:14:39+10:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://emiraganov.github.io/shelve/categories/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://emiraganov.github.io/shelve/tags/</loc>
   </url>
 </urlset>
