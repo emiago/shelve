@@ -1,7 +1,7 @@
 
-# WORK
 
-**App is in early stage and any bugs or features please report**. 
+# Note
+**App is in early stage. Any bugs or features please report**. 
 
 Currently more work needs to be done before going open source. 
 App is free to use.
