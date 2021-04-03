@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Install - Shelve</title>
+  <title>Advanced - Shelve</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://emiraganov.github.io/shelve/favicon.png">
@@ -90,7 +90,7 @@
   <h4>Docs</h4>
   <ul>
     
-    <li class="active ">
+    <li class="">
       <a href="https://emiraganov.github.io/shelve/docs/install/">Install</a>
     </li>
     
@@ -98,7 +98,7 @@
       <a href="https://emiraganov.github.io/shelve/docs/usage/">Usage</a>
     </li>
     
-    <li class="">
+    <li class="active ">
       <a href="https://emiraganov.github.io/shelve/docs/advanced/">Advanced</a>
     </li>
     
@@ -109,32 +109,22 @@
         </div>
         <div class="col-12 col-md-9">
           
-<h1 class="title">Install</h1>
+<h1 class="title">Advanced</h1>
 <div class="content ">
-  <h2 id="install-http-server">Install HTTP server</h2>
-<p>Http server is used as signaling server for establishing p2p connection and exchanging metadata.</p>
-<p>Easiest way is to run with docker:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -d --net<span class="o">=</span>host emiraganov/shelve:latest
-</code></pre></div><p>or download and install <code>shelved</code> via package <a href="https://github.com/emiraganov/shelve/releases/latest">release page</a>.</p>
-<p><strong>Warning!</strong>: <em><strong>This version service should be used only in local network There is no authentification!</strong></em> ;)</p>
-<h2 id="install-client">Install client</h2>
-<p><code>shelve</code> is <strong>single static binary</strong> and therefore installation and running is easy.</p>
-<p>Linux install:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">wget https://github.com/emiraganov/shelve/releases/latest/download/shelve_linux_amd64.tar.gz
-sudo tar -C /usr/bin -xf shelve_linux_amd64.tar.gz
-</code></pre></div><p>Other platforms binaries you can find on <a href="https://github.com/emiraganov/shelve/releases/latest">release page</a></p>
-<h2 id="web-shelve">Web shelve</h2>
-<p>By default shelved serves clients on port <code>8000</code> that can be used as GUI explorer.<br>
-Just enter IP of your server in your browser. For example <code>http://192.168.1.100:8000</code></p>
-<h3 id="metadata">Metadata</h3>
-<p>Server will not hold or store any data about files content. All file sharing will be done p2p.
-Metadata about client sharing is active as long client is connected to server.</p>
-<p>Only metadata that server holds (In Memory) is:</p>
-<ul>
-<li>Active shared files from client and stats about files like name, type, size, modified time.</li>
-<li>Hostname and remote IP are used for identification.</li>
-</ul>
-
+  <h2 id="https">HTTPS</h2>
+<p>This version service should be used only in local network (No authentication). Data exchange
+is already encrypted via <code>Webrtc protocol</code>, but if you want to
+encrypt even metadata exchange (like file names, ids) you can configure
+server and clients for https.</p>
+<p>To run server as https some env variables must be set before running shelved.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">SHELVED_TLS</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">SHELVED_TLS_KEY</span><span class="o">=</span>&lt;location of key&gt;
+<span class="nv">SHELVED_TLS_CRT</span><span class="o">=</span>&lt;location of crt&gt;
+</code></pre></div><p>For clients:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">SHELVE_TLS</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">SHELVE_TLS_KEY</span><span class="o">=</span>&lt;location of key&gt;
+<span class="nv">SHELVE_TLS_CRT</span><span class="o">=</span>&lt;location of crt&gt;
+</code></pre></div>
 </div>
 </div>
 

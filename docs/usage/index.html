@@ -11,7 +11,7 @@
 
   
   
-  <link rel="stylesheet" href="/shelve/css/style.min.e8d6bf7aae6d60e6f0604d1b5ea57dd66411e3babd64b14ec4d5bf44984217c7.css">
+  <link rel="stylesheet" href="/shelve/css/style.min.8c64891120f9920b92fbeaf76b1705c67c620618dc87b10848adc502050bfd53.css">
   
 
   
@@ -41,10 +41,10 @@
     <div class='header'>
   <div class="container">
     <div class="logo">
-      <a href="https://emiraganov.github.io/shelve"><img alt="Logo" src="/shelve/images/logo.svg" /></a>
+      <a href="https://emiraganov.github.io/shelve"><img alt="Logo" src="/shelve/images/shelve.svg" /></a>
     </div>
     <div class="logo-mobile">
-      <a href="https://emiraganov.github.io/shelve"><img alt="Logo" src="/shelve/images/logo-mobile.svg" /></a>
+      <a href="https://emiraganov.github.io/shelve"><img alt="Logo" src="/shelve/images/shelve.svg" /></a>
     </div>
     <div id="main-menu" class="main-menu">
   <ul>
@@ -98,6 +98,10 @@
       <a href="https://emiraganov.github.io/shelve/docs/usage/">Usage</a>
     </li>
     
+    <li class="">
+      <a href="https://emiraganov.github.io/shelve/docs/advanced/">Advanced</a>
+    </li>
+    
   </ul>
 </div>
 
@@ -107,35 +111,49 @@
           
 <h1 class="title">Usage</h1>
 <div class="content ">
-  <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">Usage:
-  publish		- Publish current directory/file
-  peers			- List of active peers
-  cp 			  - Copy files/folders between a remote peer and the <span class="nb">local</span> filesystem
-  ls			  - List peer file tree
-  search 		- Search file across many peers
-</code></pre></div><h2 id="publishing-filedirectory">Publishing file/directory</h2>
+  <h2 id="before-you-run-shelve">Before you run shelve</h2>
+<p>First set <strong>SHELVE_HOST</strong> env var in your terminal so that client can connect to signal server. For example server is running on 192.168.1.100:8000</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">SHELVE_HOST</span><span class="o">=</span>192.168.1.100:8000
+</code></pre></div><p>or configure via <a href="##ClientConfiguration">Client Configuration</a></p>
+<h2 id="publish-filedirectory">Publish file/directory</h2>
+<p>This will connect to signal server and start sharing files.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shelve publish /path/of/your/dir /another/path ...
-</code></pre></div><p>Check does your share appear with web client <code>http://&lt;yourdomain&gt;/</code>
+</code></pre></div><p>Now you give users ability to retrieve or store files on dedicated paths.</p>
+<p>Check does your shares appear with web client <code>http://192.168.1.100:8000/</code>
 or run command in other terminal:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shelve peers  <span class="c1"># This will get you list of peers</span>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shelve peers  <span class="c1"># This will get you list of active peers and their shares</span>
 </code></pre></div><p>To make sharing permanent check out <a href="##ClientConfiguration">Client Configuration</a></p>
-<h2 id="exploring-shared-files">Exploring shared files</h2>
+<h2 id="list-files">List files</h2>
 <p>With web client this is just like using your file explorer. Using cli can be done</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shelve ls &lt;peerid&gt;:/path
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shelve ls &lt;peerid&gt;<span class="o">[</span>:/path<span class="o">]</span>
+</code></pre></div><h2 id="copy-files">Copy files</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># Remote to local</span>
+shelve cp &lt;peerid&gt;:/path/to/file /destination
+<span class="c1"># Local to remote</span>
+shelve cp /path/to/local/file &lt;peerid&gt;:/path/to/file 
 </code></pre></div><h2 id="search">Search</h2>
 <p>Client allows you to search file across all peers. This is useful when you need
 to find specific file location.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shelve search &lt;query&gt;
-</code></pre></div><h2 id="a-nameclientconfigurationaclient-configuration"><!-- raw HTML omitted --><!-- raw HTML omitted -->Client Configuration</h2>
-<p>Work in progress :(</p>
-<h2 id="different-ways-of-usage">Different ways of usage</h2>
-<p>This service allows clients to share or different ways. Please let me know if you find other usage.</p>
-<ul>
-<li>p2p between client/devices</li>
-<li>having extra computer? use it as backup server, this is useful if you need some files always accessable.</li>
-<li>having unused disks? mount it, share it, give users extra storage</li>
-<li>share files in your VMs, containers and use one command to sync your code, configurations</li>
-</ul>
+</code></pre></div><h2 id="a-nameclientconfigurationaclient-configuration"><!-- raw HTML omitted --><!-- raw HTML omitted -->Client configuration</h2>
+<p>Configuration is simple json file. It allows you to configure
+your shared files and then you can add app to your <em>startup</em>. This will make your shared files to appear when ever your machine boots.</p>
+<p>To configure shelve CLI app just run in shell:</p>
+<pre><code>shelve config
+</code></pre><p>This should open your default GUI editor or you can edit conf file directly in your home config dir. On linux this is <code>~/.config/shelve/shelve.json</code></p>
+<p>Example of config:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;host&#34;</span><span class="p">:</span> <span class="s2">&#34;10.1.1.1:8000&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;shared&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;/absolute/path/to/shared/folder&#34;</span> 
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;/absolute/path/to/file.conf&#34;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div><p>After that runing <code>shelve</code> without args will start publishing shared files.</p>
 
 </div>
 </div>
@@ -152,7 +170,7 @@ to find specific file location.</p>
       <div class="col-12">
         <div class="sub-footer-inner">
           <ul>
-            <li class="zerostatic"><a href="https://www.github.com/emiraganov/shelve">github</a></li>
+            <li class="zerostatic"><a href="https://github.com/emiraganov/shelve">github</a></li>
           </ul>
         </div>
       </div>

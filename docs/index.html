@@ -11,7 +11,7 @@
 
   
   
-  <link rel="stylesheet" href="/shelve/css/style.min.e8d6bf7aae6d60e6f0604d1b5ea57dd66411e3babd64b14ec4d5bf44984217c7.css">
+  <link rel="stylesheet" href="/shelve/css/style.min.8c64891120f9920b92fbeaf76b1705c67c620618dc87b10848adc502050bfd53.css">
   
 
   
@@ -41,10 +41,10 @@
     <div class='header'>
   <div class="container">
     <div class="logo">
-      <a href="https://emiraganov.github.io/shelve"><img alt="Logo" src="/shelve/images/logo.svg" /></a>
+      <a href="https://emiraganov.github.io/shelve"><img alt="Logo" src="/shelve/images/shelve.svg" /></a>
     </div>
     <div class="logo-mobile">
-      <a href="https://emiraganov.github.io/shelve"><img alt="Logo" src="/shelve/images/logo-mobile.svg" /></a>
+      <a href="https://emiraganov.github.io/shelve"><img alt="Logo" src="/shelve/images/shelve.svg" /></a>
     </div>
     <div id="main-menu" class="main-menu">
   <ul>
@@ -98,6 +98,10 @@
       <a href="https://emiraganov.github.io/shelve/docs/usage/">Usage</a>
     </li>
     
+    <li class="">
+      <a href="https://emiraganov.github.io/shelve/docs/advanced/">Advanced</a>
+    </li>
+    
   </ul>
 </div>
 
@@ -109,10 +113,37 @@
 <span class="overview">Overview</span>
 <h1 class="title">Overview</h1>
 <div class="content">
-  <h2 id="intro">Intro</h2>
-<p>Shelve is service that allows cross platform p2p file sharing using Webrtc technology.
-It is mainly designed to be used with command line interface, but it has also web interface
-for easier navigation.</p>
+  <p><strong>NOTE: App is in early stage. Any bugs or features please report on</strong> <a href="https://github.com/emiraganov/shelve">github issues</a></p>
+<h2 id="intro">Intro</h2>
+<p>Shelve tries to give different approach of exchanging and sharing files across different platform using latest <em><strong>WebRTC</strong></em> protocol.</p>
+<p>Main design is that you can quickly share your folder (as shared storage) over network and give other users ability to read or write files.
+Sharing single file is also possible but files can only be downloaded.</p>
+<p>Main features:</p>
+<ul>
+<li><strong>Cross platform</strong> files/folders sharing. Linux, Windows, OSX</li>
+<li>User can <strong>read or write</strong> files on shared paths.</li>
+<li>Exchange is secure and <strong>p2p</strong>, to allow direct data transmisition</li>
+<li>Sharing is done in <strong>one command</strong> and controled from user device</li>
+<li></li>
+</ul>
+<p>Future Features:</p>
+<ul>
+<li>Specific permissions and control for each share (<strong>NOT DONE</strong>)</li>
+<li>Safe over internet (<strong>NOT DONE</strong>)</li>
+</ul>
+<p>Shelve clients:</p>
+<ul>
+<li><strong>CLI client</strong></li>
+<li><strong>Web client</strong> - GUI file explorer (no direct sharing possible)</li>
+</ul>
+<h3 id="explore-different-ways-of-usage">Explore different ways of usage</h3>
+<p>Shelve is mainly designed to be used with CLI client.
+Client comes as <strong>single static binary</strong> which you can easily install and run anywhere.</p>
+<p>You can turn any machine also as <strong>backup server</strong>. This is useful if you need some storage or files always accessible.</p>
+<p>You can run it in VM, container (with network configured) and then manage all files with one command.</p>
+<h3 id="webrtc">Webrtc</h3>
+<p>Clients are using latest <a href="https://en.wikipedia.org/wiki/WebRTC">WebRTC</a> technology to send and receive files p2p.
+Webrtc is protocol designed for safe p2p and real time communications.</p>
 
 </div>
 
@@ -131,6 +162,13 @@ for easier navigation.</p>
 </div>
 
 
+<div class="summary mb-2">
+  
+  <h2 class="title-summary"><a href="https://emiraganov.github.io/shelve/docs/advanced/">Advanced</a></h2>
+  <p>Advanced configurations</p>
+</div>
+
+
 
 
         </div>
@@ -145,7 +183,7 @@ for easier navigation.</p>
       <div class="col-12">
         <div class="sub-footer-inner">
           <ul>
-            <li class="zerostatic"><a href="https://www.github.com/emiraganov/shelve">github</a></li>
+            <li class="zerostatic"><a href="https://github.com/emiraganov/shelve">github</a></li>
           </ul>
         </div>
       </div>
