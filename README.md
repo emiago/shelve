@@ -5,7 +5,7 @@
 
 # Shelve
 
-Shelve is application that allows cross platform p2p storage(folder) sharing using `WebRTC` technology.
+Shelve is application that allows cross platform p2p file/storage sharing using `WebRTC` technology.
 
 Checkout more on [shelve page](https://emiraganov.github.io/shelve/)
 
