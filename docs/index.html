@@ -116,8 +116,9 @@
   <p><strong>NOTE: App is in early stage. Any bugs or features please report on</strong> <a href="https://github.com/emiraganov/shelve">github issues</a></p>
 <h2 id="intro">Intro</h2>
 <p>Shelve tries to give different approach of exchanging and sharing files across different platform using latest <em><strong>WebRTC</strong></em> protocol.</p>
-<p>Main design is that you can quickly share your folder (as shared storage) over network and give other users ability to read or write files.
-Sharing single file is also possible but files can only be downloaded.</p>
+<p>Main design is that you can quickly share your folder (as shared storage) over network and give other users ability to read or write files. Sharing single file is also possible but files can only be downloaded.</p>
+<p>Shelve goal is not to be some new global p2p file exchange. Instead it focus on <strong>simplicity, flexibility, and easy setup</strong> which you can run in your organisation, company or home and let your users exchange files a matter of seconds. Nevertheless it will try to use best ways to make data exchange faster.</p>
+<p>It is still a <em>client server</em> model, but in this case all content of files are  exchanged  <strong>p2p</strong> and transport is encrypted. Server is more for metadata and signaling. Peer to peer gives <strong>flexibility</strong> as any client can act as a server. In shelve case, it is not just to serve files, it can also serve device storage. This also allows shelve to grow in different ways.</p>
 <p>Main features:</p>
 <ul>
 <li><strong>Cross platform</strong> files/folders sharing. Linux, Windows, OSX</li>
@@ -136,10 +137,10 @@ Sharing single file is also possible but files can only be downloaded.</p>
 <li><strong>Web client</strong> - GUI file explorer (no direct sharing possible)</li>
 </ul>
 <h3 id="explore-different-ways-of-usage">Explore different ways of usage</h3>
-<p>Shelve is mainly designed to be used with CLI client.
+<p>Shelve is currently mainly designed to be used with CLI client to achieve file/storage sharing.
 Client comes as <strong>single static binary</strong> which you can easily install and run anywhere.</p>
 <p>You can turn any machine also as <strong>backup server</strong>. This is useful if you need some storage or files always accessible.</p>
-<p>You can run it in VM, container (with network configured) and then manage all files with one command.</p>
+<p>You can run it in <em>VM</em>, <em>container</em> (with network configured) and then manage all files with one command.</p>
 <h3 id="webrtc">Webrtc</h3>
 <p>Clients are using latest <a href="https://en.wikipedia.org/wiki/WebRTC">WebRTC</a> technology to send and receive files p2p.
 Webrtc is protocol designed for safe p2p and real time communications.</p>
