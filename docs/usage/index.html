@@ -121,14 +121,43 @@
 </code></pre></div><p>Now you give users ability to retrieve or store files on dedicated paths.</p>
 <p>Check does your shares appear with web client <code>http://192.168.1.100:8000/</code>
 or run command in other terminal:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shelve peers  <span class="c1"># This will get you list of active peers and their shares</span>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shelve ps  <span class="c1"># This will get you list of active peers and their shares</span>
+
+<span class="c1">#Example</span>
+ID      Host          Created                       File
+2d5ce4c backup-server Wed May <span class="m">19</span> 22:29:49 CEST <span class="m">2021</span> etc
+1f7a1be backup-server Wed May <span class="m">19</span> 22:29:49 CEST <span class="m">2021</span> home
+cdc421a backup-server Wed May <span class="m">19</span> 22:29:49 CEST <span class="m">2021</span> web
+8ffae08 mylaptop      Wed May <span class="m">19</span> 22:25:31 CEST <span class="m">2021</span> asterisk
+3dc8aea mylaptop      Wed May <span class="m">19</span> 22:25:33 CEST <span class="m">2021</span> go1.15
 </code></pre></div><p>To make sharing permanent check out <a href="##ClientConfiguration">Client Configuration</a></p>
 <h2 id="list-files">List files</h2>
 <p>With web client this is just like using your file explorer. Using cli can be done</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shelve ls &lt;peerid&gt;<span class="o">[</span>:/path<span class="o">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shelve ls &lt;peerid&gt;<span class="o">[</span>:/path<span class="o">]</span> <span class="c1"># peerid can be used as Host~File</span>
+
+<span class="c1">#Example:</span>
+shelve ls backup-server~etc <span class="c1"># or shorter</span>
+<span class="c1"># shelve ls 2d5ce4c</span>
+ModTime          Type  Size    File
+May <span class="m">28</span> 15:25:57  file  <span class="m">89</span> B    fstab
+May <span class="m">28</span> 15:25:57  file  <span class="m">682</span> B   group
+May <span class="m">19</span> 20:29:49  file  <span class="m">14</span> B    hostname
+May <span class="m">19</span> 20:29:49  file  <span class="m">372</span> B   hosts
+May <span class="m">29</span> 14:20:33  dir   <span class="m">4</span> KB    init.d
+May <span class="m">28</span> 15:25:57  file  <span class="m">570</span> B   inittab
+May <span class="m">29</span> 14:17:04  file  <span class="m">54</span> B    issue
+May <span class="m">29</span> 14:20:33  dir   <span class="m">4</span> KB    logrotate.d
+May <span class="m">22</span> 06:59:49  file  <span class="m">140</span> B   logrotate.d/acpid
+May <span class="m">29</span> 14:20:33  dir   <span class="m">4</span> KB    modprobe.d
+May <span class="m">28</span> 15:25:57  file  <span class="m">1</span> KB    modprobe.d/aliases.conf
+May <span class="m">28</span> 15:25:57  file  <span class="m">1</span> KB    modprobe.d/blacklist.conf
+May <span class="m">28</span> 15:25:57  file  <span class="m">122</span> B   modprobe.d/i386.conf
+May <span class="m">28</span> 15:25:57  file  <span class="m">91</span> B    modprobe.d/kms.conf
+
+...
 </code></pre></div><h2 id="copy-files">Copy files</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># Remote to local</span>
-shelve cp &lt;peerid&gt;:/path/to/file /destination
+shelve cp &lt;peerid&gt;:/path/to/file /destination 
 <span class="c1"># Local to remote</span>
 shelve cp /path/to/local/file &lt;peerid&gt;:/path/to/file 
 </code></pre></div><h2 id="search">Search</h2>
