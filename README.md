@@ -5,13 +5,9 @@
 
 # Shelve
 
-Shelve is application that allows cross platform p2p file/storage sharing using `WebRTC` technology.
+Shelve is application that allows cross platform p2p storage sharing.
 
-Checkout more on [shelve page](https://emiraganov.github.io/shelve/)
-
-This version of app are totally free to use (non-commercial).
-
-
+Checkout more on [shelve page](https://emiago.github.io/shelve/)
 
 # Usage
 
@@ -39,4 +35,4 @@ shelve cp /path/to/local/file <peerid>:/path/to/file
 
 or use **Web client**
 
-To find out more commands and features checkout [docs](https://emiraganov.github.io/shelve/docs)
+To find out more commands and features checkout [docs](https://emiago.github.io/shelve/docs)
