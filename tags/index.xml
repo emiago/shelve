@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Shelve</title>
-    <link>https://emiraganov.github.io/shelve/tags/</link>
+    <link>emiago.github.io/shelve/tags/</link>
     <description>Recent content in Tags on Shelve</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://emiraganov.github.io/shelve/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="emiago.github.io/shelve/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

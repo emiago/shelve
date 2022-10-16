@@ -7,11 +7,11 @@
   <title>Overview - Shelve</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="icon" href="https://emiraganov.github.io/shelve/favicon.png">
+  <link rel="icon" href="emiago.github.io/shelve/favicon.png">
 
   
   
-  <link rel="stylesheet" href="/shelve/css/style.min.8c64891120f9920b92fbeaf76b1705c67c620618dc87b10848adc502050bfd53.css">
+  <link rel="stylesheet" href="/emiago.github.io/shelve/css/style.min.8c64891120f9920b92fbeaf76b1705c67c620618dc87b10848adc502050bfd53.css">
   
 
   
@@ -24,13 +24,13 @@
     
     
     <li class="menu-item-home">
-      <a href="/shelve/">
+      <a href="emiago.github.io/shelve/">
         <span>Home</span>
       </a>
     </li>
     
     <li class="menu-item-docs active">
-      <a href="/shelve/docs/">
+      <a href="emiago.github.io/shelve/docs/">
         <span>Docs</span>
       </a>
     </li>
@@ -41,23 +41,23 @@
     <div class='header'>
   <div class="container">
     <div class="logo">
-      <a href="https://emiraganov.github.io/shelve"><img alt="Logo" src="/shelve/images/shelve.svg" /></a>
+      <a href="emiago.github.io/shelve"><img alt="Logo" src="/emiago.github.io/shelve/images/shelve.svg" /></a>
     </div>
     <div class="logo-mobile">
-      <a href="https://emiraganov.github.io/shelve"><img alt="Logo" src="/shelve/images/shelve.svg" /></a>
+      <a href="emiago.github.io/shelve"><img alt="Logo" src="/emiago.github.io/shelve/images/shelve.svg" /></a>
     </div>
     <div id="main-menu" class="main-menu">
   <ul>
     
     
     <li class="menu-item-home">
-      <a href="/shelve/">
+      <a href="emiago.github.io/shelve/">
         <span>Home</span>
       </a>
     </li>
     
     <li class="menu-item-docs active">
-      <a href="/shelve/docs/">
+      <a href="emiago.github.io/shelve/docs/">
         <span>Docs</span>
       </a>
     </li>
@@ -91,15 +91,15 @@
   <ul>
     
     <li class="">
-      <a href="https://emiraganov.github.io/shelve/docs/install/">Install</a>
+      <a href="emiago.github.io/shelve/docs/install/">Install</a>
     </li>
     
     <li class="">
-      <a href="https://emiraganov.github.io/shelve/docs/usage/">Usage</a>
+      <a href="emiago.github.io/shelve/docs/usage/">Usage</a>
     </li>
     
     <li class="">
-      <a href="https://emiraganov.github.io/shelve/docs/advanced/">Advanced</a>
+      <a href="emiago.github.io/shelve/docs/advanced/">Advanced</a>
     </li>
     
   </ul>
@@ -115,32 +115,31 @@
 <div class="content">
   <p><strong>NOTE: App is in early stage. Any bugs or features please report on</strong> <a href="https://github.com/emiraganov/shelve">github issues</a></p>
 <h2 id="intro">Intro</h2>
-<p>Shelve tries to give different approach of exchanging and sharing files across different platform using latest <em><strong>WebRTC</strong></em> protocol.</p>
-<p>Main design is that you can quickly share your folder (as shared storage) over network and give other users ability to read or write files. Sharing single file is also possible but files can only be downloaded.</p>
-<p>Shelve goal is not to be some new global p2p file exchange. Instead it focus on <strong>simplicity, flexibility, and easy setup</strong> which you can run in your organisation, company or home and let your users exchange files a matter of seconds. Nevertheless it will try to use best ways to make data exchange faster.</p>
-<p>It is still a <em>client server</em> model, but in this case all content of files are  exchanged  <strong>p2p</strong> and transport is encrypted. Server is more for metadata and signaling. Peer to peer gives <strong>flexibility</strong> as any client can act as a server. In shelve case, it is not just to serve files, it can also serve device storage. This also allows shelve to grow in different ways.</p>
-<p>Main features:</p>
+<p>Shelve tries to give different approach of providing <strong>shared storage</strong> using latest <em><strong>WebRTC</strong></em> protocol.
+Idea it that you can turn any device on any platform to be as <strong>storage server</strong> with running simple shell command.</p>
+<p>This <strong>removes need</strong> to have dedicated IP/domain to be accessible. Instead you are subscribing your storage to central server and use Web(GUI) to share access with other users/groups.</p>
+<p>Clients and servers are written in <strong>GO</strong>, which allows easy installation with single binary.</p>
+<p><em>Shelve(Web GUI + API) mostly acts as server for access managment and signaling, but all data is transmitted p2p and it is encrypted.</em></p>
+<h2 id="install">Install</h2>
+<p>For now server must be manually installed. Check Install for more.</p>
+<h2 id="main-features">Main features:</h2>
 <ul>
-<li><strong>Cross platform</strong> files/folders sharing. Linux, Windows, OSX</li>
+<li>Web GUI for access managment, upload, search, download files.</li>
+<li><strong>Cross platform</strong> folders sharing. Linux, Windows, OSX</li>
 <li>User can <strong>read or write</strong> files on shared paths.</li>
 <li>Exchange is secure and <strong>p2p</strong>, to allow direct data transmisition</li>
 <li>Sharing is done in <strong>one command</strong> and controled from user device</li>
 </ul>
 <p>Future Features:</p>
 <ul>
-<li>Specific permissions and control for each share (<strong>NOT DONE</strong>)</li>
-<li>Safe over internet (<strong>NOT DONE</strong>)</li>
+<li>Rooms/Groups as different points to provide storage (<strong>IN PROGRESS</strong>)</li>
+<li>Sharing and permission control for list of users/groups (<strong>IN PROGRESS</strong>)</li>
 </ul>
 <p>Shelve clients:</p>
 <ul>
 <li><strong>CLI client</strong></li>
 <li><strong>Web client</strong> - GUI file explorer (no direct sharing possible)</li>
 </ul>
-<h3 id="explore-different-ways-of-usage">Explore different ways of usage</h3>
-<p>Shelve is currently mainly designed to be used with CLI client to achieve file/storage sharing.
-Client comes as <strong>single static binary</strong> which you can easily install and run anywhere.</p>
-<p>You can turn any machine also as <strong>backup server</strong>. This is useful if you need some storage or files always accessible.</p>
-<p>You can run it in <em>VM</em>, <em>container</em> (with network configured) and then manage all files with one command.</p>
 <h3 id="webrtc">Webrtc</h3>
 <p>Clients are using latest <a href="https://en.wikipedia.org/wiki/WebRTC">WebRTC</a> technology to send and receive files p2p.
 Webrtc is protocol designed for safe p2p and real time communications.</p>
@@ -150,21 +149,21 @@ Webrtc is protocol designed for safe p2p and real time communications.</p>
 
 <div class="summary mb-2">
   
-  <h2 class="title-summary"><a href="https://emiraganov.github.io/shelve/docs/install/">Install</a></h2>
+  <h2 class="title-summary"><a href="emiago.github.io/shelve/docs/install/">Install</a></h2>
   <p>Installing is easy as it comes as single binary for server and clients.</p>
 </div>
 
 
 <div class="summary mb-2">
   
-  <h2 class="title-summary"><a href="https://emiraganov.github.io/shelve/docs/usage/">Usage</a></h2>
+  <h2 class="title-summary"><a href="emiago.github.io/shelve/docs/usage/">Usage</a></h2>
   <p>Using simple interface allows you to share files/directories, make copies, add files to remote path, explore, search &hellip;</p>
 </div>
 
 
 <div class="summary mb-2">
   
-  <h2 class="title-summary"><a href="https://emiraganov.github.io/shelve/docs/advanced/">Advanced</a></h2>
+  <h2 class="title-summary"><a href="emiago.github.io/shelve/docs/advanced/">Advanced</a></h2>
   <p>Advanced configurations</p>
 </div>
 
@@ -197,7 +196,7 @@ Webrtc is protocol designed for safe p2p and real time communications.</p>
   
 
   
-  <script type="text/javascript" src="/shelve/js/scripts.min.eaf147370baecdd07c022597db631f99cab1c9cd6479de586f30327a568d6a0f.js"></script>
+  <script type="text/javascript" src="/emiago.github.io/shelve/js/scripts.min.eaf147370baecdd07c022597db631f99cab1c9cd6479de586f30327a568d6a0f.js"></script>
   
 
   
